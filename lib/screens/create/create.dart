@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rpg/models/character.dart';
 import 'package:flutter_rpg/models/vocation.dart';
 import 'package:flutter_rpg/screens/create/vocation_card.dart';
+import 'package:flutter_rpg/screens/home/home.dart';
 import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:flutter_rpg/shared/styled_text.dart';
 import 'package:flutter_rpg/theme.dart';
@@ -40,11 +41,38 @@ class _CreateState extends State<Create> {
 // submit handler
   void handleSubmit() {
     if (_nameController.text.trim().isEmpty) {
-      // show error dialog
+      showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+                title: const StyledHeading('Missing Character Name'),
+                content: const StyledText(
+                    'Every good RPG character needs a good name.'),
+                actions: [
+                  StyledButton(
+                      onPressed: () {
+                        Navigator.pop(ctx);
+                      },
+                      child: StyledHeading('close'))
+                ],
+                actionsAlignment: MainAxisAlignment.center,
+              ));
       return;
     }
     if (_sloganController.text.trim().isEmpty) {
-      // show error dialog
+      showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+                title: const StyledHeading('Missing Slogan'),
+                content: const StyledText('Remember to add a catchy slogan.'),
+                actions: [
+                  StyledButton(
+                      onPressed: () {
+                        Navigator.pop(ctx);
+                      },
+                      child: StyledHeading('close'))
+                ],
+                actionsAlignment: MainAxisAlignment.center,
+              ));
       return;
     }
 
@@ -53,6 +81,12 @@ class _CreateState extends State<Create> {
         slogan: _sloganController.text.trim(),
         vocation: selectedVocation,
         id: uuid.v4()));
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (ctx) => const Home(),
+        ));
   }
 
   @override

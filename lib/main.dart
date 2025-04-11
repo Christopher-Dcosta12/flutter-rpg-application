@@ -6,8 +6,8 @@ import 'package:flutter_rpg/theme.dart';
 void main() {
   runApp(MaterialApp(
     theme: primaryTheme,
-    // home: Home(),
-    home: Create(),
+    home: Home(),
+    // home: Create(),
     // home: Sandbox(),
   ));
 }
