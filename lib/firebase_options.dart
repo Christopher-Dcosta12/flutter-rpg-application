@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -49,16 +50,16 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAk4lVvBowQxMmBhQH00e21kCO5CBWsuD8',
+  static final FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_ANDROID_API_KEY']!,
     appId: '1:952772263605:android:d253db6790dd8468f448fc',
     messagingSenderId: '952772263605',
     projectId: 'flutter-rpg-99825',
     storageBucket: 'flutter-rpg-99825.firebasestorage.app',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB9CcnMMKFIgYRy9Bkdj-tiL0osth1A9hg',
+  static final FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_IOS_API_KEY']!,
     appId: '1:952772263605:ios:69d83fd46cddafbcf448fc',
     messagingSenderId: '952772263605',
     projectId: 'flutter-rpg-99825',
