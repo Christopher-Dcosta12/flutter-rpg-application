@@ -1,0 +1,22 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "flutter-rpg-99825",
+          "appId": "1:952772263605:android:d253db6790dd8468f448fc",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "flutter-rpg-99825",
+          "configurations": {
+            "android": "1:952772263605:android:d253db6790dd8468f448fc",
+            "ios": "1:952772263605:ios:69d83fd46cddafbcf448fc"
+          }
+        }
+      }
+    }
+  }
+}

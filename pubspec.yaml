@@ -37,6 +37,9 @@ dependencies:
   google_fonts: ^6.2.1
   uuid: ^4.5.1
   provider: ^6.1.4
+  firebase_core: ^3.13.0
+  cloud_firestore: ^5.6.7
+  flutter_dotenv: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +66,7 @@ flutter:
   assets:
     - assets/img/skills/
     - assets/img/vocations/
+    - .env
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

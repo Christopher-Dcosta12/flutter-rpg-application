@@ -80,17 +80,6 @@ class _SkillListState extends State<SkillList> {
             ),
             StyledText(selectedSkill.name),
 
-            // save button
-            StyledButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: const StyledHeading('Character was saved.'),
-                    showCloseIcon: true,
-                    duration: const Duration(seconds: 2),
-                    backgroundColor: AppColors.secondaryColor,
-                  ));
-                },
-                child: const StyledHeading('Save Character')),
             const SizedBox(
               height: 20,
             )
